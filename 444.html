@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dinner Date for Khusi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            color: #54283c;
+            font-family: Georgia, 'Times New Roman', serif;
+            background: radial-gradient(circle at 50% 15%, #fff5ef 0, #f8d9df 48%, #eab9c7 100%);
+        }
+
+        .scene {
+            position: relative;
+            width: min(100%, 760px);
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 28px;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            width: min(100%, 500px);
+            padding: 48px 34px 38px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, .85);
+            border-radius: 28px;
+            background: rgba(255, 250, 247, .88);
+            box-shadow: 0 22px 65px #9d526044, inset 0 0 30px #fff;
+            animation: arrive 1s ease-out both;
+        }
+
+        .eyebrow {
+            color: #b45f78;
+            text-transform: uppercase;
+            letter-spacing: .24em;
+            font: 700 11px Arial, sans-serif;
+        }
+
+        h1 {
+            margin: 14px 0 8px;
+            color: #9b405f;
+            font-size: clamp(38px, 9vw, 58px);
+            font-weight: 500;
+        }
+
+        .intro {
+            margin: 0 auto 22px;
+            max-width: 360px;
+            color: #795262;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            color: #c76e86;
+            font-size: 20px;
+            letter-spacing: 9px;
+        }
+
+        .details {
+            margin: 20px 0 25px;
+            padding: 17px 12px;
+            border-top: 1px solid #efd4da;
+            border-bottom: 1px solid #efd4da;
+            line-height: 1.8;
+        }
+
+        .details strong {
+            color: #9b405f;
+        }
+
+        .rsvp {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 999px;
+            color: white;
+            background: #b65372;
+            text-decoration: none;
+            font: 700 13px Arial, sans-serif;
+            letter-spacing: .08em;
+            box-shadow: 0 7px 18px #b6537244;
+            transition: transform .2s, background .2s;
+        }
+
+        .rsvp:hover {
+            transform: translateY(-3px);
+            background: #963d5c;
+        }
+
+        .signature {
+            margin: 20px 0 0;
+            color: #a15d72;
+            font-style: italic;
+        }
+
+        .teddy {
+            position: absolute;
+            z-index: 3;
+            left: -40px;
+            bottom: -31px;
+            font-size: 76px;
+            filter: drop-shadow(0 5px 4px #73415325);
+            animation: cuddle 3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .bouquet {
+            position: absolute;
+            z-index: 3;
+            right: -39px;
+            bottom: -23px;
+            font-size: 62px;
+            animation: sway 3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .corner-flower {
+            position: absolute;
+            font-size: 34px;
+            animation: bob 3.5s ease-in-out infinite;
+        }
+
+        .f1 {
+            top: 8%;
+            left: 9%;
+        }
+
+        .f2 {
+            top: 13%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .sparkle {
+            position: fixed;
+            z-index: 1;
+            top: -20px;
+            color: #fff;
+            pointer-events: none;
+            text-shadow: 0 0 9px #fff, 0 0 16px #f2a9bb;
+            animation: fall linear infinite;
+        }
+
+        .s1 {
+            left: 8%;
+            animation-duration: 7s;
+            animation-delay: -2s;
+            font-size: 17px;
+        }
+
+        .s2 {
+            left: 23%;
+            animation-duration: 9s;
+            animation-delay: -6s;
+            font-size: 12px;
+        }
+
+        .s3 {
+            left: 39%;
+            animation-duration: 6s;
+            animation-delay: -3s;
+            font-size: 18px;
+        }
+
+        .s4 {
+            left: 61%;
+            animation-duration: 8s;
+            animation-delay: -5s;
+            font-size: 13px;
+        }
+
+        .s5 {
+            left: 78%;
+            animation-duration: 7.5s;
+            animation-delay: -1s;
+            font-size: 16px;
+        }
+
+        .s6 {
+            left: 92%;
+            animation-duration: 10s;
+            animation-delay: -7s;
+            font-size: 11px;
+        }
+
+        @keyframes arrive {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: .15;
+            }
+        }
+
+        @keyframes cuddle {
+
+            0%,
+            100% {
+                transform: rotate(-5deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(5deg) translateY(-7px);
+            }
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(7deg);
+            }
+
+            50% {
+                transform: rotate(-7deg);
+            }
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-8deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(8deg);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .card {
+                padding: 40px 25px 32px;
+            }
+
+            .teddy {
+                left: -12px;
+                bottom: -26px;
+                font-size: 56px;
+            }
+
+            .bouquet {
+                right: -10px;
+                bottom: -19px;
+                font-size: 48px;
+            }
+
+            .corner-flower {
+                font-size: 27px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="scene">
+        <span class="corner-flower f1" aria-hidden="true">🌸</span>
+        <span class="corner-flower f2" aria-hidden="true">🌷</span>
+        <span class="sparkle s1" aria-hidden="true">✦</span><span class="sparkle s2" aria-hidden="true">✧</span>
+        <span class="sparkle s3" aria-hidden="true">✦</span><span class="sparkle s4" aria-hidden="true">✧</span>
+        <span class="sparkle s5" aria-hidden="true">✦</span><span class="sparkle s6" aria-hidden="true">✧</span>
+        <section class="card" aria-label="Romantic dinner invitation">
+            <div class="eyebrow">An evening made for us</div>
+            <h1>Dear Khusi</h1>
+            <p class="intro">I'd love to take you out for a little magic, a lovely dinner, and a whole evening of
+                smiles.</p>
+            <div class="divider" aria-hidden="true">♥ &nbsp; ✿ &nbsp; ♥</div>
+            <div class="details">
+                <div><strong>Our date:</strong> Whenever you're free</div>
+                <div><strong>Our plan:</strong> Dinner, candlelight &amp; good conversation</div>
+                <div><strong>Dress code:</strong> Whatever makes you feel lovely</div>
+            </div>
+            <a class="rsvp"
+                href="mailto:?subject=Yes%20to%20our%20dinner%20date&body=I'd%20love%20to%20go!%20When%20are%20we%20going%3F">I'd
+                love to go! ♡</a>
+            <p class="signature">Can't wait to make a sweet memory with you.</p>
+            <span class="teddy" aria-label="Dancing teddy bear">🧸</span>
+            <span class="bouquet" aria-label="Bouquet of flowers">💐</span>
+        </section>
+    </main>
+</body>
+
+</html>
